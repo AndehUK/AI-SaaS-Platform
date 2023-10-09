@@ -20,14 +20,7 @@ const tools: Tool[] = [
     icon: MessageSquare,
     color: "text-violet-500",
     bgColor: "bg-violet-500/10",
-    href: "/conversation",
-  },
-  {
-    label: "Music Generation",
-    icon: Music,
-    color: "text-emerald-500",
-    bgColor: "bg-emerald-500/10",
-    href: "/generation/music",
+    href: "/generation/conversation",
   },
   {
     label: "Image Generation",
@@ -42,6 +35,13 @@ const tools: Tool[] = [
     color: "text-orange-700",
     bgColor: "bg-orange-700/10",
     href: "/generation/video",
+  },
+  {
+    label: "Music Generation",
+    icon: Music,
+    color: "text-emerald-500",
+    bgColor: "bg-emerald-500/10",
+    href: "/generation/music",
   },
   {
     label: "Code Generation",
