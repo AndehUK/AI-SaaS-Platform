@@ -13,9 +13,11 @@ import {
   VideoIcon,
 } from "lucide-react";
 
-import { SidebarRoute } from "@/types/sidebar-routes";
 import { usePathname } from "next/navigation";
 import { SidebarItem } from "./Sidebar-Item";
+import FreeCounter from "./free-counter";
+import { SidebarRoute } from "@/types/sidebar-routes";
+import { SidebarProps } from "@/types/sidebar";
 
 const routes: SidebarRoute[] = [
   {
@@ -61,7 +63,7 @@ const routes: SidebarRoute[] = [
   },
 ];
 
-export const Sidebar = () => {
+export const Sidebar = ({ apiLimitCount = 0 }: SidebarProps) => {
   const pathname = usePathname();
 
   return (
@@ -82,6 +84,7 @@ export const Sidebar = () => {
           ))}
         </div>
       </div>
+      <FreeCounter apiLimitCount={apiLimitCount} />
     </div>
   );
 };
