@@ -8,9 +8,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { MAX_FREE_COUNTS } from "@/constants";
 
+import { useProModal } from "@/hooks/use-pro-modal";
+
 import { SidebarProps } from "@/types/sidebar";
 
 const FreeCounter = ({ apiLimitCount = 0 }: SidebarProps) => {
+  const proModal = useProModal();
   const [progress, setProgress] = useState<number>(0);
   const [mounted, setMounted] = useState(false);
 
@@ -37,7 +40,11 @@ const FreeCounter = ({ apiLimitCount = 0 }: SidebarProps) => {
             </p>
             <Progress className="h-3" value={progress} />
           </div>
-          <Button className="w-full" variant="premium">
+          <Button
+            className="w-full"
+            variant="premium"
+            onClick={proModal.onOpen}
+          >
             Upgrade
             <Zap className="w-4 h-4 ml-2" />
           </Button>
