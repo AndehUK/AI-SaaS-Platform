@@ -12,7 +12,7 @@ import { useProModal } from "@/hooks/use-pro-modal";
 
 import { SidebarProps } from "@/types/sidebar";
 
-const FreeCounter = ({ apiLimitCount = 0 }: SidebarProps) => {
+const FreeCounter = ({ apiLimitCount = 0, isPro = false }: SidebarProps) => {
   const proModal = useProModal();
   const [progress, setProgress] = useState<number>(0);
   const [mounted, setMounted] = useState(false);
@@ -27,6 +27,10 @@ const FreeCounter = ({ apiLimitCount = 0 }: SidebarProps) => {
   }, [apiLimitCount]);
 
   if (!mounted) {
+    return null;
+  }
+
+  if (isPro) {
     return null;
   }
 

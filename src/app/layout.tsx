@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import { ModalProvider } from "@/components/providers/modal-provider";
+import { ToastProvider } from "@/components/providers/toast-provider";
 import { LayoutProps } from "@/types/layout";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <html lang="en">
         <body className={inter.className}>
           <ModalProvider />
+          <ToastProvider />
           {children}
         </body>
       </html>
